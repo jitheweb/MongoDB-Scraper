@@ -30,7 +30,8 @@ app.engine("handlebars", exphbs({
 }));
 app.set("view engine", "handlebars");
 
-mongoose.connect("mongodb://mongodb-espn-scraper.herokuapp.com/scraped_news");
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/scraped_news";
+mongoose.connect(MONGODB_URI);
 var db = mongoose.connection;
 db.on("error", function(error) {
   console.log("Mongoose Error: ", error);
@@ -187,6 +188,7 @@ app.delete("/notes/delete/:note_id/:article_id", function(req, res) {
     }
   });
 });
+
 
 app.listen(port, function() {
   console.log("App running on port " + port);
