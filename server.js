@@ -30,7 +30,7 @@ app.engine("handlebars", exphbs({
 }));
 app.set("view engine", "handlebars");
 
-mongoose.connect("mongodb://localhost/scraped_news");
+mongoose.connect("mongodb://mongodb-espn-scraper.herokuapp.com/scraped_news");
 var db = mongoose.connection;
 db.on("error", function(error) {
   console.log("Mongoose Error: ", error);
