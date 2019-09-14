@@ -30,6 +30,7 @@ app.engine("handlebars", exphbs({
 }));
 app.set("view engine", "handlebars");
 
+console.log(process.env);
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/scraped_news";
 mongoose.connect(MONGODB_URI);
 var db = mongoose.connection;
