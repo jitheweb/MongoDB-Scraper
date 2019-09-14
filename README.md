@@ -25,3 +25,5 @@ Technologies Used
     - cheerio
     - request
 
+heroku deploy link:
+https://mongodb-espn-scraper.herokuapp.com
